@@ -24,6 +24,11 @@ const SIZES = {
 
 const ProgressBar = ({ value, size }) => {
   const styles = SIZES[size];
+
+  if (!styles) {
+    throw new Error('unknown size !');
+  }
+
   return  <Progress max="100" style={styles} value={value} aria-valuenow={value}>{value}</Progress>
   ;
 
