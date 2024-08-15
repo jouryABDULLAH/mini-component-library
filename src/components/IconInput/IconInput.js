@@ -40,7 +40,7 @@ const IconInput = ({
 };
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   width: ${p=> p.width};
   position: relative;
   display: flex;
@@ -50,6 +50,11 @@ const Wrapper = styled.div`
   border-bottom-color: ${COLORS.black};
   border-bottom-style: solid;
   font-size: var(--font-size);
+  color: ${COLORS.gray700};
+
+  &:hover{
+    color: ${COLORS.black};
+  }
 `;
 
 
@@ -58,6 +63,15 @@ const Input = styled.input`
   padding: 8px 8px 8px 24px;
   border: none;
   font-size: inherit;
+  color: inherit;
+  font-weight: 700;
+  outline-offset: 2px;
+
+  &::placeholder{
+    color: ${COLORS.gray500};
+    font-weight: 400;
+  }
+
 `;
 
 const IconWrapper = styled.div`
@@ -65,6 +79,7 @@ const IconWrapper = styled.div`
   left: 2px;
   bottom: 8px;
   text-align: center;
+
 `
 
 export default IconInput;
